@@ -1,0 +1,35 @@
+<button>Button</button>
+
+<script>
+  // 1. 함수에 전달할 때 사용
+  let a = [1, 2, 3];
+
+  function plus(...args) {
+    let sum = 0;
+    args.forEach((item) => {
+      sum += item;
+    });
+    console.log(sum);
+  }
+
+  plus(...a);
+  plus.apply(null, a); // 배열적용
+
+  // 2. apply함수 -> this를 바꿔줌 & 인자값을 배열로 받을 수있음.
+
+  let person = {
+    name: "tomato",
+    인사: function () {
+      console.log(`안녕하세요.${this.name}입니다`);
+    },
+  };
+
+  let person2 = {
+    name: "soma",
+  };
+
+  person.인사.apply(person2, [1, 2]); // apply함수는 this를 바꿔줌.(새로운 인스턴스)
+
+  //3. call함수
+  person.인사.call(person2, 1, 2); // apply와 call의 차이점은 인자값을 배열로 받을지 안받을지 차이
+</script>

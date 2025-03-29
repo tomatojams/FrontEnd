@@ -1,0 +1,27 @@
+<button>버튼0</button>
+
+<script>
+  //1.  양말과 바지의 위치를 바꾸는 함수
+
+  let pants = 20;
+  let socks = 100;
+
+  console.log(`바지${pants} 양말${socks}`); // 바지20장 양말100켤레
+
+  function analyzer(list, ...args) {
+    console.log(list[1] + args[0] + list[0] + args[1]);
+  }
+
+  pants = 0;
+  analyzer2` 바지 ${pants} 양말 ${socks}`;
+
+  //2. 바지가 0개일때 대체 출력
+  function analyzer2(list, ...args) {
+    if (args[0] == 0) {
+      console.log("바지안팔아요" + list[1] + args[1]);
+    } else {
+      console.log(list[0] + args[0] + list[1] + args[1]);
+    }
+  }
+  //
+</script>

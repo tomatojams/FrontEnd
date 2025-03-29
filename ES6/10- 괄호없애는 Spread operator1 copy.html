@@ -1,0 +1,52 @@
+<button>Button</button>
+
+<script>
+
+  // Spread operator -> 대괄호, 중괄호, 함수 소괄호 안에서만 사용
+
+  
+  // 1. 리스트 해체
+  var array = ["hi", "tomato"];
+  console.log(...array); // hi
+
+  // 2. 문자열해체
+  let char = "hello";
+  console.log(...char); // h e l l o
+
+  // 3. 해체 후 합침
+  let a = [1, 2, 3];
+  let b = [4, 5];
+  let c = [...a, ...b]; // [1, 2, 3, 4, 5]
+  console.log(c);
+
+  // 4. Deep Copy
+  // 얕은 복사
+  let d = a;
+  console.log("a", a);
+  console.log("d", d);
+
+  a[3] = 4;
+  console.log("a", a);
+  console.log("d", d);
+
+  // Deep Copy
+  let e = [...a]; // Deep Copy
+  a[4] = 5;
+  console.log("a", a);
+  console.log("e", e);
+
+  // 5. object 해체 합치기 Deep Copy
+  let o1 = {a:1, b:2};
+  let o2 = {...o1,c:3};
+  console.log(o2); 
+
+  // 6. object Deep Copy & 중복
+  let o3 = {...o1}; // Deep Copy
+  let o4 = {a:2, ...o1}; // 중복 -> 뒤의것으로 대체해줌.
+  
+  console.log(o4); 
+  let o5 = {...o1, a:2}; // 중복 -> 뒤의것으로 대체해줌.
+  console.log(o5);
+
+
+</script>

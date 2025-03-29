@@ -1,0 +1,36 @@
+<div></div>
+<button id="버튼">버튼</button>
+
+<script>
+  // 1. Hoisting 이란? 자바스크립트 엔진이 코드를 실행하기 전에 변수와 함수 선언을 최상단으로 끌어올리는 것. (선언부만 끌어올림)
+
+  console.log(age); // undefined -> 선언은 되었지만 할당이 안되었기때문에 undefined
+  var age = 20;
+  console.log(age);
+
+  // 2. 변수 동시선언
+
+  let age2 = 30,
+    name2 = "tomato"; // 동시선언 가능
+
+  // 3. 전역변수
+
+  window.name = "kim"; // 권장 전역변수
+  console.log(window.name);
+  function kim() {
+    console.log(window.name); // 전역변수는 함수내부에서도 사용가능
+  }
+
+  kim();
+
+  // 4. 연습문제
+
+  if (true) {
+    let a = 1;
+    var b = 2;
+    if (true) {
+      let b = 3;
+    }
+    console.log(b); // 1
+  }
+</script>

@@ -1,0 +1,52 @@
+<div></div>
+<button id="버튼">버튼</button>
+
+<script>
+  // 1.  Hoisting으로 함수만들기전에 함수를 써도되지만, let 변수를 할당하기전에 변수를 쓰면 에러가 발생함
+  1
+  hello(); // 자체는 문제가 없음
+  function hello() {
+    console.log(good);
+    let good = "hello"; // let은 미리 할당까지 되지 않음
+  }
+  // 2. 함수표현식이 아닌 변수선언식으로 함수를 만들면 함수할당이 안되기때문에 에러가 발생함
+  2
+  hello22(); //아직 함수가 아님
+  var hello22 = function() {
+    console.log(good2); // undefined
+    var good2 = "hello";
+  }
+  3
+
+  let a = 1;
+  var hello3 = function() {
+    let a = 2;
+  }
+
+  console.log(a);
+
+  //4
+
+  let c = 1; // 블락
+  var d = 2; // 전역
+  window.c = 3; // 전역역
+  window.d = 4; // var d = 4 와 같은 전역변수 (재선언,재할당)
+  // c = 1, d= 4
+  console.log(c+d); // c = 1 범위가 가장 좁은것부터 사용 그래서 전역이 아닌걸 사용함함
+
+
+  //5 console.log()는 바로 실행되지 않고 예약됨 var은 함수스코프라서 전역변수처럼 사용
+  // 나중에 실행된 console.log()는 var로 선언된 i를 사용함
+
+  // var i = 1; // 외부생성효과
+  for (var i = 1; i<6; i++){
+    setTimeout(function() {console.log(i)}, 1000);
+  }
+  // var => let 수정
+  for (let i = 1; i<6; i++){
+    // let i = 1; // 내부 생성효과
+    setTimeout(function() {console.log(i)}, i*1000);
+  }
+
+
+</script>

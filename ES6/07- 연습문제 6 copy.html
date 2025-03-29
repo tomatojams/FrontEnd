@@ -1,0 +1,30 @@
+<div style="display: none">모달창0</div>
+<div style="display: none">모달창1</div>
+<div style="display: none">모달창2</div>
+
+<button>버튼0</button>
+<button>버튼1</button>
+<button>버튼2</button>
+
+<script>
+  var button = document.querySelectorAll("button");
+  var modal = document.querySelectorAll("div");
+
+  // button[0].addEventListener('click', function(){
+  //   modal[0].style.display = 'block';
+  // });
+
+  // button[1].addEventListener('click', function(){
+  //   modal[1].style.display = 'block';
+  // });
+
+  // button[2].addEventListener('click', function(){
+  //   modal[2].style.display = 'block';
+  // });
+// let으로 내부 생성효과를 줌
+  for (let i = 0; i < button.length; i++) {
+    button[i].addEventListener("click", function () {
+      modal[i].style.display = "block";
+    });
+  }
+</script>
